@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_report_vat_book_xlsx" model="ir.actions.report">
+        <field name="name">Exportar Libro de IVA XLSX</field>
+        <field name="model">l10n.es.vat.book</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">motsoft_vat_book_xlsx.vat_book_xlsx</field>
+        <field name="report_file">motsoft_vat_book_xlsx.vat_book_xlsx</field>
+        <field name="print_report_name">'Libro_IVA_%s-T%s' % (object.date_start.year, (object.date_start.month - 1) // 3 + 1)</field>
+        <field name="binding_model_id" ref="l10n_es_vat_book.model_l10n_es_vat_book" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
