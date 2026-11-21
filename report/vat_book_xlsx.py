@@ -21,7 +21,10 @@ class MotsoftVatBookXlsx(models.AbstractModel):
         formats = self._get_formats(workbook)
 
         for idx, book in enumerate(objs, 1):
-            suffix = f' {book.date_start.year} - T{(book.date_start.month - 1) // 3 + 1}'
+            suffix = f' {book.year} - {book.period_type}'
+
+            if book.period_type == '0A':
+                suffix = f' {book.year} - Anual'
 
             self._write_sheet(
                 workbook, formats, book,
