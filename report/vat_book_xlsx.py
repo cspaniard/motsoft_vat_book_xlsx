@@ -20,7 +20,7 @@ class MotsoftVatBookXlsx(models.AbstractModel):
         self._set_workbook_default_format(workbook)
         formats = self._get_formats(workbook)
 
-        for idx, book in enumerate(objs, 1):
+        for idx, book in enumerate(objs.sorted('date_start'), 1):
             suffix = f' {book.year} - {book.period_type}'
 
             if book.period_type == '0A':
